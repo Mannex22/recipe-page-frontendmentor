@@ -13,6 +13,7 @@
     
     --primary-font: "Young Serif";
     --secondary-font: Outfit;
+    --recipe-card-padding: 26px;
 }
 
 
@@ -55,7 +56,7 @@ hr{
     background-color: hsl(0, 0%, 100%);
 
     width: 500px;
-    padding: 26px;
+    padding: var(--recipe-card-padding);
 
     border-radius: 16px;
 }
@@ -65,7 +66,7 @@ hr{
     flex-direction: column;
     justify-content: space-between;
 
-    height: 320px;
+    min-height: 320px;
 
     margin-bottom: 20px;
 }
@@ -244,3 +245,94 @@ hr{
     padding-bottom: 0;
 }
 
+@media (max-width: 515px) {
+    body{
+        padding: 0;
+    }
+    main{
+        height: 100%;
+        width: 100%;
+    }
+
+    .recipe-card{
+        width: 100%;
+        height: 100%;
+        
+        border-radius: 0;
+    }
+
+    .recipe-card .recipe-header{
+        height: auto;
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .recipe-header .header-image-container{
+        margin: calc(-1 * var(--recipe-card-padding));
+        margin-bottom: 24px;
+    }
+    
+    .recipe-header .header-image-container img{
+        border-radius: 0;
+    }
+
+    .recipe-header .recipe-name{
+        font-size: 36px;
+        line-height: 36px;
+        margin-bottom: 28px;
+    }
+    
+    .recipe-header .recipe-description{
+        font-size: 16px;
+        line-height: 23px;
+        
+    }
+
+    .prep-time{
+        padding: 34px;
+    }
+
+    .prep-time .prep-time-title{
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .prep-time .prep-list li{
+        font-size: 16px;
+        margin-bottom: 6px;
+
+        text-indent: -24px;
+        padding-left: 32px;
+    }
+
+    .section-title{
+        font-size: 24px;
+    }
+
+    .ingredients .ingredients-list{
+        font-size: var(--paragraph-font-size);
+        text-indent: -24px;
+        padding-left: 32px;
+    }
+
+    .ingredients-list li::before{
+        font-size: var(--paragraph-font-size);
+    }
+
+    .instructions-list li::before{
+        font-size: var(--paragraph-font-size);
+    }
+
+    .instructions .instruction-step{
+        font-size: 16px;
+    }
+
+    .nutrition .nutrition-description{
+        font-size: var(--paragraph-font-size);
+    }
+
+    .nutrition .nutrition-item dt, .nutrition .nutrition-item dd{
+        font-size: var(--paragraph-font-size);
+    }
+
+}
